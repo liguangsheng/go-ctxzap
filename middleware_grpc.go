@@ -33,7 +33,7 @@ func UnaryServerInterceptor(logger *zap.Logger, hooks ...HookFunc) grpc.UnarySer
 		}
 		logger.Info("grpc payload",
 			zap.Any("response", resp),
-			zap.Duration("elapsed", elapsed),
+			zap.Int64("elapsed_ms", elapsed.Microseconds()),
 			zap.Error(err))
 
 		return resp, err

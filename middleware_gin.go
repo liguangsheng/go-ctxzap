@@ -57,6 +57,6 @@ func Gin(logger *zap.Logger, hooks ...HookFunc) gin.HandlerFunc {
 
 		logger.Info("gin payload",
 			zap.Any("response", json.RawMessage(w.body.String())),
-			zap.Duration("elapsed", elapsed))
+			zap.Int64("elapsed_ms", elapsed.Microseconds()))
 	}
 }

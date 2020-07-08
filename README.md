@@ -17,7 +17,7 @@ func init() {
 
 func SomeFunction(ctx context.Context) {
     logger := ctxzap.L(ctx)
-	logger.Info("some log") 
+    logger.Info("some log") 
     ...
 }
 
@@ -42,7 +42,3 @@ grpc.NewServer(
 		zapctx.UnaryServerInterceptor(zap.L()),
 	)))
 ```
-
-# TODO
-
-- payload middleware
